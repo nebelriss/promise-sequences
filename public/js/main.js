@@ -1,1 +1,5 @@
-const tiger = getJSON('json/tiger.json').then((response) => console.log(response));
+(function() {
+    getJSON('/animals').then((animals) => {
+        addHeadingToDOM(animals.title);
+    });
+})();

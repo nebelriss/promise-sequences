@@ -31,7 +31,7 @@
 
     /*
     * How the sequence looks like after the loop
-    * /
+    */
     sequence.then(() => {
       return getJSON(animals.animalURLs[0]).then(addTextToDOM);
     }).then(() => {

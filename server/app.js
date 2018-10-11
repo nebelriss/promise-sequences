@@ -5,13 +5,13 @@ const port = 8080;
 
 const animals = {
     "title": "Just some animals...",
-    "animalURLs": {
-        "tiger": "json/tiger.json",
-        "elephant": "json/elephant.json",
-        "penguin": "json/penguin.json",
-        "polarbear": "json/polarbear.json",
-        "fox": "json/fox.json",
-    }
+    "animalURLs": [
+        "json/tiger.json",
+        "json/elephant.json",
+        "json/penguin.json",
+        "json/polarbear.json",
+        "json/fox.json"
+    ]
 }
 
 // get animals

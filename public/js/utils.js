@@ -1,3 +1,5 @@
+const fakeNetworkDelay = 1500;
+
 function get(url) {
     return fetch(url);
 }
@@ -11,13 +13,26 @@ function addHeadingToDOM(title) {
     const headingEl = document.querySelector('.heading');
 
     // create a h1 element and add title as text
-    const h1El = document.createElement('h1');
-    h1El.textContent = title;
+    const h1 = document.createElement('h1');
+    h1.textContent = title;
 
     // append to DOM
-    headingEl.appendChild(h1El);
+    headingEl.appendChild(h1);
 }
 
 function addTextToDOM(title, text) {
+    // get text-section div
+    const textEl = document.querySelector('.text-section');
 
+    // create h2 and add title
+    const h2 = document.createElement('h2');
+    h2.textContent = title;
+
+    // create p and add text
+    const p = document.createElement('p');
+    p.textContent = text;
+
+    // append both to text-section
+    textEl.appendChild(h2);
+    textEl.appendChild(p);
 }

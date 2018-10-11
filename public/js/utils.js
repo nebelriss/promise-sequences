@@ -1,11 +1,31 @@
 const fakeNetworkDelay = 1500;
 
+function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getWithLag(url) {
+    const randomNetLag = Math.floor(3000 * Math.random());
+
+    console.log(randomNetLag);
+    
+
+    const request = fetch(url);
+    const networkLag = wait(randomNetLag);
+
+    return Promise.all([request, networkLag]).then((response) => response[0]);
+}
+
 function get(url) {
     return fetch(url);
 }
 
 function getJSON(url) {
-    return get(url).then((response) => response.json());
+    // regular get
+    //return get(url).then((response) => response.json());
+
+    // get with random lag
+    return getWithLag(url).then((response) => response.json());
 }
 
 function addHeadingToDOM(title) {

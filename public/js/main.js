@@ -1,0 +1,1 @@
+const tiger = getJSON('json/tiger.json').then((response) => console.log(response));

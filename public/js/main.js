@@ -3,7 +3,7 @@
         addHeadingToDOM(animals.title);
 
         animals.animalURLs.forEach((animal) => {
-            console.log(animal);
+            getJSON(animal).then(addTextToDOM);
         });
     });
 })();

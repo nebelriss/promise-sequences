@@ -20,17 +20,17 @@ function addHeadingToDOM(title) {
     headingEl.appendChild(h1);
 }
 
-function addTextToDOM(title, text) {
+function addTextToDOM(animal) {
     // get text-section div
     const textEl = document.querySelector('.text-section');
 
     // create h2 and add title
     const h2 = document.createElement('h2');
-    h2.textContent = title;
+    h2.textContent = `${animal.position}. ${animal.name}`;
 
     // create p and add text
     const p = document.createElement('p');
-    p.textContent = text;
+    p.textContent = animal.text;
 
     // append both to text-section
     textEl.appendChild(h2);

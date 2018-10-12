@@ -2,9 +2,9 @@
     getJSON('/animals').then((animals) => {
       addHeadingToDOM(animals.title);
   
-      animals.animalURLs.reduce((acc, cur) => {
-          return acc.then(() => {
-            return getJSON(cur).then(addTextToDOM);
+      animals.animalURLs.reduce((sequence, curURL) => {
+          return sequence.then(() => {
+            return getJSON(curURL).then(addTextToDOM);
           });
       }, Promise.resolve());
 
